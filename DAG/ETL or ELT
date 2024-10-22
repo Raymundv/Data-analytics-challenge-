@@ -1,0 +1,16 @@
+Based on the DAG, answer the following questions:
+
+Would you choose ETL or ELT? Why?
+
+In this case, ETL. The main reasons are data governance and data security issues. In regard to data governance, data in productive environments (or stages) must adhere to fixed (or recommended, in a very few specific cases) standards for quality, field naming, data types, etc. Additionally, it must comply with confidentiality or encryption for certain types of fields (personal or sensitive data). Therefore, transforming data is essential before loading it for consumption by the final user (whether the user be sales executives or directors) in production or live stages. The only time I would choose ELT over ETL is for data ingestion processes where the data is taken to certain standards, stored in a datalake or data warehouse to be exploited later for different applications or data pipelines. Since part of the challange is "taking the merged file to a productive environment", ETL is the option. 
+
+Which part of the process would you emphasize most? Why?
+
+Always, data cleaning and transformation (including merging) are essential. Data must be consistent, clean, and meet the standards set by the bank division the process is intended for. Of course, there is no point in having cleaned data if there are no users exploiting it, but messy data can lead to mistaken or biased decision-making by the final users, or even it can be impractical to use.
+
+
+
+Note: In this challenge, I uploaded the merged file into a SQL database (MySQL) to represent the productive environment (which can be in real life salesforce or GCP). Of course, the data cleaning and processing (merging) could have been implemented directly in SQL, but since I regard the SQL database as the live environment, and in my experience, the use of Python enhanced by Spark is a standard in my current job for cleaning and transforming data, I decided to approach the challenge this way. Cleaning and processing were implemented in Python, and data exploitation (queries) performed in the live environment (MySQL database).
+
+
+

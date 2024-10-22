@@ -1,0 +1,13 @@
+Files for data cleaning are the python ones. The label cleaned tags the new csv files after the quality and consistency treatment. the merging.py file is the one that created the merged file. 
+
+It is important to mentioned that the string value types in the merged data set, and for the data dictionaries were taken as VARCHAR(255), 
+This is more than enough for the data in this challenge. 
+For columns like courier the selection of 255 for the VARCHAR may be exagerated. 
+However, this was set as it is (VARCHAR(255)) becuase it is usually common to use this quantity for long strings. 
+
+The determination of the n number in VARCHAR(n) is defined by the data goverment section of the bank division, taking into account the necessity of the final users and the specifics of the productive platform (eg., salesforce, etc.)
+
+Similarly, the Numerical(10,2). For the data in this challenge is more than enough. But it is the standard I have encountered at work. 
+
+
+Note: In this challenge, I uploaded the merged file into a SQL database (MySQL) to represent the productive environment (which can be in real life salesforce or GCP). Of course, the data cleaning and processing (merging) could have been implemented directly in SQL, but since I regard the SQL database as the live environment, and in my experience, the use of Python enhanced by Spark is a standard in my current job for cleaning and transforming data, I decided to approach the challenge this way. Cleaning and processing were implemented in Python, and data exploitation (queries) performed in the live environment (MySQL database).
